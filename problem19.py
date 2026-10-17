@@ -1,17 +1,17 @@
-# Problem 19: collections.Counter()
-# HackerRank: https://www.hackerrank.com/challenges/collections-counter/problem
+# Problem: Merge the Tools!
+# HackerRank: https://www.hackerrank.com/challenges/merge-the-tools/problem
 
-from collections import Counter
+string = input().strip()
+k = int(input())
 
-x = int(input())
-shoe_sizes = Counter(map(int, input().split()))
-n = int(input())
-earnings = 0
+for start in range(0, len(string), k):
+    segment = string[start:start + k]
+    seen = set()
+    result = []
 
-for _ in range(n):
-    size, price = map(int, input().split())
-    if shoe_sizes[size] > 0:
-        earnings += price
-        shoe_sizes[size] -= 1
+    for char in segment:
+        if char not in seen:
+            result.append(char)
+            seen.add(char)
 
-print(earnings)
+    print("".join(result))

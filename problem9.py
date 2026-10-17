@@ -1,11 +1,12 @@
-# Problem 9: Mutations
-# HackerRank: https://www.hackerrank.com/challenges/python-mutations/problem
+# Problem: Word Order
+# HackerRank: https://www.hackerrank.com/challenges/word-order/problem
 
-def mutate_string(string, position, character):
-    return string[:position] + character + string[position + 1:]
+n = int(input())
+word_counts = {}
 
-if __name__ == "__main__":
-    s = input()
-    i, c = input().split()
-    s_new = mutate_string(s, int(i), c)
-    print(s_new)
+for _ in range(n):
+    word = input().strip()
+    word_counts[word] = word_counts.get(word, 0) + 1
+
+print(len(word_counts))
+print(*word_counts.values())

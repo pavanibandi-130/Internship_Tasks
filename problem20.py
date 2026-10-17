@@ -1,16 +1,27 @@
-# Problem 20: No Idea!
-# HackerRank: https://www.hackerrank.com/challenges/no-idea/problem
+# Problem: Piling Up!
+# HackerRank: https://www.hackerrank.com/challenges/piling-up/problem
 
-n, m = map(int, input().split())
-array = list(map(int, input().split()))
-set_a = set(map(int, input().split()))
-set_b = set(map(int, input().split()))
+for _ in range(int(input())):
+    n = int(input())
+    cubes = list(map(int, input().split()))
 
-happiness = 0
-for number in array:
-    if number in set_a:
-        happiness += 1
-    elif number in set_b:
-        happiness -= 1
+    left = 0
+    right = n - 1
+    last = float("inf")
+    possible = True
 
-print(happiness)
+    while left <= right:
+        if cubes[left] >= cubes[right]:
+            current = cubes[left]
+            left += 1
+        else:
+            current = cubes[right]
+            right -= 1
+
+        if current > last:
+            possible = False
+            break
+
+        last = current
+
+    print("Yes" if possible else "No")

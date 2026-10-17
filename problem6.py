@@ -1,8 +1,7 @@
-# Problem 6: Find the Runner-Up Score!
-# HackerRank: https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+# Problem: Introduction to Sets
+# HackerRank: https://www.hackerrank.com/challenges/py-introduction-to-sets/problem
 
 n = int(input())
-scores = list(map(int, input().split()))
+heights = set(map(int, input().split()))
 
-unique_scores = sorted(set(scores))
-print(unique_scores[-2])
+print(sum(heights) / len(heights))

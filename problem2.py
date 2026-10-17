@@ -1,9 +1,6 @@
-# Problem 2: Arithmetic Operators
-# HackerRank: https://www.hackerrank.com/challenges/python-arithmetic-operators/problem
+# Problem: String Split and Join
+# HackerRank: https://www.hackerrank.com/challenges/python-string-split-and-join/problem
 
-a = int(input())
-b = int(input())
-
-print(a + b)
-print(a - b)
-print(a * b)
+line = input()
+words = line.split()
+print("-".join(words))

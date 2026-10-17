@@ -1,12 +1,23 @@
-# Problem 15: Word Order
-# HackerRank: https://www.hackerrank.com/challenges/word-order/problem
+# Problem: Lists
+# HackerRank: https://www.hackerrank.com/challenges/python-lists/problem
 
-n = int(input())
-word_counts = {}
+items = []
 
-for _ in range(n):
-    word = input().strip()
-    word_counts[word] = word_counts.get(word, 0) + 1
+for _ in range(int(input())):
+    command = input().split()
+    action = command[0]
 
-print(len(word_counts))
-print(*word_counts.values())
+    if action == "insert":
+        items.insert(int(command[1]), int(command[2]))
+    elif action == "print":
+        print(items)
+    elif action == "remove":
+        items.remove(int(command[1]))
+    elif action == "append":
+        items.append(int(command[1]))
+    elif action == "sort":
+        items.sort()
+    elif action == "pop":
+        items.pop()
+    elif action == "reverse":
+        items.reverse()

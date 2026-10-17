@@ -1,10 +1,10 @@
-# Problem 8: What's Your Name?
-# HackerRank: https://www.hackerrank.com/challenges/whats-your-name/problem
+# Problem: Set .add()
+# HackerRank: https://www.hackerrank.com/challenges/py-set-add/problem
 
-def print_full_name(first, last):
-    print(f"Hello {first} {last}! You just delved into python.")
+n = int(input())
+countries = set()
 
-if __name__ == "__main__":
-    first_name = input()
-    last_name = input()
-    print_full_name(first_name, last_name)
+for _ in range(n):
+    countries.add(input().strip())
+
+print(len(countries))

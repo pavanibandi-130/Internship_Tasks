@@ -1,8 +1,9 @@
-# Problem 3: Python Division
-# HackerRank: https://www.hackerrank.com/challenges/python-division/problem
+# Problem: Mutations
+# HackerRank: https://www.hackerrank.com/challenges/python-mutations/problem
 
-a = int(input())
-b = int(input())
+string = input()
+position, character = input().split()
+position = int(position)
 
-print(a // b)
-print(a / b)
+result = string[:position] + character + string[position + 1:]
+print(result)

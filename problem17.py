@@ -1,13 +1,16 @@
-# Problem 17: Finding the Percentage
-# HackerRank: https://www.hackerrank.com/challenges/finding-the-percentage/problem
+# Problem: No Idea!
+# HackerRank: https://www.hackerrank.com/challenges/no-idea/problem
 
-n = int(input())
-students = {}
+n, m = map(int, input().split())
+array = list(map(int, input().split()))
+liked = set(map(int, input().split()))
+disliked = set(map(int, input().split()))
 
-for _ in range(n):
-    data = input().split()
-    students[data[0]] = list(map(float, data[1:]))
+happiness = 0
+for number in array:
+    if number in liked:
+        happiness += 1
+    elif number in disliked:
+        happiness -= 1
 
-name = input()
-marks = students[name]
-print(f"{sum(marks) / len(marks):.2f}")
+print(happiness)

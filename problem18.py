@@ -1,25 +1,22 @@
-# Problem 18: Lists
-# HackerRank: https://www.hackerrank.com/challenges/python-lists/problem
+# Problem: The Minion Game
+# HackerRank: https://www.hackerrank.com/challenges/the-minion-game/problem
 
-if __name__ == "__main__":
-    n = int(input())
-    items = []
+string = input().strip()
+vowels = set("AEIOU")
+stuart_score = 0
+kevin_score = 0
+length = len(string)
 
-    for _ in range(n):
-        command = input().split()
-        action = command[0]
+for i, char in enumerate(string):
+    points = length - i
+    if char in vowels:
+        kevin_score += points
+    else:
+        stuart_score += points
 
-        if action == "insert":
-            items.insert(int(command[1]), int(command[2]))
-        elif action == "print":
-            print(items)
-        elif action == "remove":
-            items.remove(int(command[1]))
-        elif action == "append":
-            items.append(int(command[1]))
-        elif action == "sort":
-            items.sort()
-        elif action == "pop":
-            items.pop()
-        elif action == "reverse":
-            items.reverse()
+if stuart_score > kevin_score:
+    print("Stuart", stuart_score)
+elif kevin_score > stuart_score:
+    print("Kevin", kevin_score)
+else:
+    print("Draw")

@@ -1,10 +1,12 @@
-# Problem 7: String Split and Join
-# HackerRank: https://www.hackerrank.com/challenges/python-string-split-and-join/problem
+# Problem: Symmetric Difference
+# HackerRank: https://www.hackerrank.com/challenges/symmetric-difference/problem
 
-def split_and_join(line):
-    return "-".join(line.split())
+m = int(input())
+set_a = set(map(int, input().split()))
 
-if __name__ == "__main__":
-    line = input()
-    result = split_and_join(line)
-    print(result)
+n = int(input())
+set_b = set(map(int, input().split()))
+
+result = sorted(set_a.symmetric_difference(set_b))
+for value in result:
+    print(value)

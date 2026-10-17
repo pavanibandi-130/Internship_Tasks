@@ -1,8 +1,10 @@
-# Problem 5: Print Function
-# HackerRank: https://www.hackerrank.com/challenges/python-print/problem
+# Problem: String Validators
+# HackerRank: https://www.hackerrank.com/challenges/string-validators/problem
 
-n = int(input())
+text = input()
 
-for i in range(1, n + 1):
-    print(i, end="")
-print()
+print(any(char.isalnum() for char in text))
+print(any(char.isalpha() for char in text))
+print(any(char.isdigit() for char in text))
+print(any(char.islower() for char in text))
+print(any(char.isupper() for char in text))

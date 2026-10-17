@@ -1,10 +1,15 @@
-# Problem 14: Set .add()
-# HackerRank: https://www.hackerrank.com/challenges/py-set-add/problem
+# Problem: Finding the Percentage
+# HackerRank: https://www.hackerrank.com/challenges/finding-the-percentage/problem
 
 n = int(input())
-stamps = set()
+student_marks = {}
 
 for _ in range(n):
-    stamps.add(input().strip())
+    data = input().split()
+    name = data[0]
+    marks = list(map(float, data[1:]))
+    student_marks[name] = marks
 
-print(len(stamps))
+query_name = input().strip()
+average = sum(student_marks[query_name]) / len(student_marks[query_name])
+print(f"{average:.2f}")
