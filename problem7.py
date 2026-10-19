@@ -1,12 +1,17 @@
-# Problem: Symmetric Difference
-# HackerRank: https://www.hackerrank.com/challenges/symmetric-difference/problem
+# Problem: List Comprehensions
+# HackerRank: https://www.hackerrank.com/challenges/list-comprehensions/problem
 
-m = int(input())
-set_a = set(map(int, input().split()))
-
+x = int(input())
+y = int(input())
+z = int(input())
 n = int(input())
-set_b = set(map(int, input().split()))
 
-result = sorted(set_a.symmetric_difference(set_b))
-for value in result:
-    print(value)
+result = [
+    [i, j, k]
+    for i in range(x + 1)
+    for j in range(y + 1)
+    for k in range(z + 1)
+    if i + j + k != n
+]
+
+print(result)

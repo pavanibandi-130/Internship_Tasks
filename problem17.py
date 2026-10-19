@@ -1,16 +1,14 @@
-# Problem: No Idea!
-# HackerRank: https://www.hackerrank.com/challenges/no-idea/problem
+# Problem: Check Strict Superset
+# HackerRank: https://www.hackerrank.com/challenges/py-check-strict-superset/problem
 
-n, m = map(int, input().split())
-array = list(map(int, input().split()))
-liked = set(map(int, input().split()))
-disliked = set(map(int, input().split()))
+a = set(map(int, input().split()))
+n = int(input())
 
-happiness = 0
-for number in array:
-    if number in liked:
-        happiness += 1
-    elif number in disliked:
-        happiness -= 1
+is_strict_superset = True
 
-print(happiness)
+for _ in range(n):
+    other = set(map(int, input().split()))
+    if not (a > other):
+        is_strict_superset = False
+
+print(is_strict_superset)

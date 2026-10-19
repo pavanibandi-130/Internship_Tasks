@@ -1,22 +1,21 @@
-# Problem: The Minion Game
-# HackerRank: https://www.hackerrank.com/challenges/the-minion-game/problem
+# Problem: Set Mutations
+# HackerRank: https://www.hackerrank.com/challenges/py-set-mutations/problem
 
-string = input().strip()
-vowels = set("AEIOU")
-stuart_score = 0
-kevin_score = 0
-length = len(string)
+n = int(input())
+a = set(map(int, input().split()))
+number_of_operations = int(input())
 
-for i, char in enumerate(string):
-    points = length - i
-    if char in vowels:
-        kevin_score += points
-    else:
-        stuart_score += points
+for _ in range(number_of_operations):
+    operation, _ = input().split()
+    other = set(map(int, input().split()))
 
-if stuart_score > kevin_score:
-    print("Stuart", stuart_score)
-elif kevin_score > stuart_score:
-    print("Kevin", kevin_score)
-else:
-    print("Draw")
+    if operation == "intersection_update":
+        a.intersection_update(other)
+    elif operation == "update":
+        a.update(other)
+    elif operation == "symmetric_difference_update":
+        a.symmetric_difference_update(other)
+    elif operation == "difference_update":
+        a.difference_update(other)
+
+print(sum(a))

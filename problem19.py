@@ -1,17 +1,10 @@
-# Problem: Merge the Tools!
-# HackerRank: https://www.hackerrank.com/challenges/merge-the-tools/problem
+# Problem: Company Logo
+# HackerRank: https://www.hackerrank.com/challenges/most-commons/problem
 
-string = input().strip()
-k = int(input())
+from collections import Counter
 
-for start in range(0, len(string), k):
-    segment = string[start:start + k]
-    seen = set()
-    result = []
+s = input().strip()
+counts = Counter(s)
 
-    for char in segment:
-        if char not in seen:
-            result.append(char)
-            seen.add(char)
-
-    print("".join(result))
+for character, count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:3]:
+    print(character, count)

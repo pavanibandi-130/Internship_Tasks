@@ -1,14 +1,19 @@
-# Problem: Capitalize!
-# HackerRank: https://www.hackerrank.com/challenges/capitalize/problem
+# Problem: Set .discard(), .remove() & .pop()
+# HackerRank: https://www.hackerrank.com/challenges/py-set-discard-remove-pop/problem
 
-text = input()
-words = text.split(" ")
-result = []
+n = int(input())
+s = set(map(int, input().split()))
+number_of_commands = int(input())
 
-for word in words:
-    if word:
-        result.append(word[0].upper() + word[1:])
-    else:
-        result.append("")
+for _ in range(number_of_commands):
+    command = input().split()
 
-print(" ".join(result))
+    if command[0] == "pop":
+        if s:
+            s.pop()
+    elif command[0] == "remove":
+        s.remove(int(command[1]))
+    elif command[0] == "discard":
+        s.discard(int(command[1]))
+
+print(sum(s))

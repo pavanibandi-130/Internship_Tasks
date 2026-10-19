@@ -1,15 +1,10 @@
-# Problem: Nested Lists
-# HackerRank: https://www.hackerrank.com/challenges/nested-list/problem
+# Problem: Set .union() Operation
+# HackerRank: https://www.hackerrank.com/challenges/py-set-union/problem
 
-records = []
-for _ in range(int(input())):
-    name = input()
-    score = float(input())
-    records.append([name, score])
+n = int(input())
+english = set(map(int, input().split()))
 
-scores = sorted(set(score for name, score in records))
-second_lowest = scores[1]
+b = int(input())
+french = set(map(int, input().split()))
 
-names = sorted(name for name, score in records if score == second_lowest)
-for name in names:
-    print(name)
+print(len(english.union(french)))

@@ -1,9 +1,13 @@
-# Problem: Text Wrap
-# HackerRank: https://www.hackerrank.com/challenges/text-wrap/problem
+# Problem: String Formatting
+# HackerRank: https://www.hackerrank.com/challenges/python-string-formatting/problem
 
-import textwrap
+n = int(input())
+width = len(format(n, "b"))
 
-text = input()
-width = int(input())
-
-print(textwrap.fill(text, width))
+for i in range(1, n + 1):
+    print(
+        str(i).rjust(width),
+        format(i, "o").rjust(width),
+        format(i, "X").rjust(width),
+        format(i, "b").rjust(width)
+    )

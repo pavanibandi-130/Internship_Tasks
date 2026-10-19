@@ -1,27 +1,14 @@
-# Problem: Piling Up!
-# HackerRank: https://www.hackerrank.com/challenges/piling-up/problem
+# Problem: Validating the Phone Number
+# HackerRank: https://www.hackerrank.com/challenges/validating-the-phone-number/problem
 
-for _ in range(int(input())):
-    n = int(input())
-    cubes = list(map(int, input().split()))
+import re
 
-    left = 0
-    right = n - 1
-    last = float("inf")
-    possible = True
+n = int(input())
 
-    while left <= right:
-        if cubes[left] >= cubes[right]:
-            current = cubes[left]
-            left += 1
-        else:
-            current = cubes[right]
-            right -= 1
+for _ in range(n):
+    phone = input().strip()
 
-        if current > last:
-            possible = False
-            break
-
-        last = current
-
-    print("Yes" if possible else "No")
+    if re.fullmatch(r"[789][0-9]{9}", phone):
+        print("YES")
+    else:
+        print("NO")

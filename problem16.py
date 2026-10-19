@@ -1,18 +1,13 @@
-# Problem: Collections.Counter()
-# HackerRank: https://www.hackerrank.com/challenges/collections-counter/problem
+# Problem: Check Subset
+# HackerRank: https://www.hackerrank.com/challenges/py-check-subset/problem
 
-from collections import Counter
+t = int(input())
 
-x = int(input())
-shoe_sizes = Counter(map(int, input().split()))
-customer_count = int(input())
+for _ in range(t):
+    n_a = int(input())
+    a = set(map(int, input().split()))
 
-earnings = 0
+    n_b = int(input())
+    b = set(map(int, input().split()))
 
-for _ in range(customer_count):
-    size, price = map(int, input().split())
-    if shoe_sizes[size] > 0:
-        earnings += price
-        shoe_sizes[size] -= 1
-
-print(earnings)
+    print(a.issubset(b))

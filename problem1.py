@@ -1,8 +1,13 @@
-# Problem: Find the Runner-Up Score!
-# HackerRank: https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+# Problem: Python If-Else
+# HackerRank: https://www.hackerrank.com/challenges/py-if-else/problem
 
 n = int(input())
-scores = list(map(int, input().split()))
 
-unique_scores = sorted(set(scores), reverse=True)
-print(unique_scores[1])
+if n % 2 != 0:
+    print("Weird")
+elif 2 <= n <= 5:
+    print("Not Weird")
+elif 6 <= n <= 20:
+    print("Weird")
+else:
+    print("Not Weird")

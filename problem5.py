@@ -1,10 +1,17 @@
-# Problem: String Validators
-# HackerRank: https://www.hackerrank.com/challenges/string-validators/problem
+# Problem: Write a Function
+# HackerRank: https://www.hackerrank.com/challenges/write-a-function/problem
 
-text = input()
+def is_leap(year):
+    leap = False
 
-print(any(char.isalnum() for char in text))
-print(any(char.isalpha() for char in text))
-print(any(char.isdigit() for char in text))
-print(any(char.islower() for char in text))
-print(any(char.isupper() for char in text))
+    if year % 400 == 0:
+        leap = True
+    elif year % 100 == 0:
+        leap = False
+    elif year % 4 == 0:
+        leap = True
+
+    return leap
+
+year = int(input())
+print(is_leap(year))

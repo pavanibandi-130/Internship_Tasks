@@ -1,15 +1,10 @@
-# Problem: Finding the Percentage
-# HackerRank: https://www.hackerrank.com/challenges/finding-the-percentage/problem
+# Problem: Set .intersection() Operation
+# HackerRank: https://www.hackerrank.com/challenges/py-set-intersection-operation/problem
 
 n = int(input())
-student_marks = {}
+english = set(map(int, input().split()))
 
-for _ in range(n):
-    data = input().split()
-    name = data[0]
-    marks = list(map(float, data[1:]))
-    student_marks[name] = marks
+b = int(input())
+french = set(map(int, input().split()))
 
-query_name = input().strip()
-average = sum(student_marks[query_name]) / len(student_marks[query_name])
-print(f"{average:.2f}")
+print(len(english.intersection(french)))

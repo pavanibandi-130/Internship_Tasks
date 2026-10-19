@@ -1,23 +1,10 @@
-# Problem: Lists
-# HackerRank: https://www.hackerrank.com/challenges/python-lists/problem
+# Problem: Set .difference() Operation
+# HackerRank: https://www.hackerrank.com/challenges/py-set-difference-operation/problem
 
-items = []
+n = int(input())
+english = set(map(int, input().split()))
 
-for _ in range(int(input())):
-    command = input().split()
-    action = command[0]
+b = int(input())
+french = set(map(int, input().split()))
 
-    if action == "insert":
-        items.insert(int(command[1]), int(command[2]))
-    elif action == "print":
-        print(items)
-    elif action == "remove":
-        items.remove(int(command[1]))
-    elif action == "append":
-        items.append(int(command[1]))
-    elif action == "sort":
-        items.sort()
-    elif action == "pop":
-        items.pop()
-    elif action == "reverse":
-        items.reverse()
+print(len(english.difference(french)))
